@@ -1,0 +1,55 @@
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.question {
+    width: 250px;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cartpage-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.question > p {
+    font-size: 12px;
+}
+
+.question > h4 {
+    margin: 0;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(216, 216, 216);
+    margin-bottom: 50px ;
+    min-height: 400px;
+    border-radius: 10px;
+}
+
+.cart > h4 {
+    width: 100%;
+    border-bottom: 4px solid #1ab7ea;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1ab7ea;
+}

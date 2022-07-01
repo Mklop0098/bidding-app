@@ -1,0 +1,46 @@
+.downheader {
+    
+    height: 56px;
+    background-color: #1ab7ea;
+    color: white;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+}
+
+.header-container {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction:  row;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.menu {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+.menu span {
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  
+.sticky + .content {
+    padding-top: 102px;
+  }

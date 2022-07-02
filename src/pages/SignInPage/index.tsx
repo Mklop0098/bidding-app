@@ -27,7 +27,7 @@ export const SignInPage = () => {
         if (repass === user.password && user.password.length >= 8 && user.name) {
             register(user)
                 .then(data => {
-                    func(user.username)
+                    func(user.name)
                     localStorage.setItem("acccess_token", JSON.stringify(data.data.data.token));
                     navigate("/")
                 })

@@ -1,12 +1,13 @@
 import './style.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 import { Product } from '../../components/Product';
 import { homeLink, listProduct } from '../../data/header';
+import { useUserContext } from '../../Context/user/user.context';
 
 export const HomePage = () => {
 
-    console.log(listProduct)
+    const { state, dispatch } = useUserContext();
+
     return (
         <div className='homepage'>
             <div className='container'>
@@ -14,7 +15,7 @@ export const HomePage = () => {
                     <div className='homepage-menu'>
                         {
                             homeLink.map(item => (
-                                <Link to={item.link} style={{textDecoration: "none", color: "black"}}>
+                                <Link to={item.link} style={{ textDecoration: "none", color: "black" }}>
                                     <h4 key={item.link}>
                                         {item.title}</h4>
                                 </Link>
@@ -23,9 +24,9 @@ export const HomePage = () => {
                     </div>
                 </div>
                 <div className='content-container'>
-                        {listProduct.map((item) => (
-                            <Product data={item}/>
-                        ))}
+                    {listProduct.map((item) => (
+                        <Product data={item} />
+                    ))}
                 </div>
             </div>
         </div>

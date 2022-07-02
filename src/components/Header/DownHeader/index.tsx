@@ -1,35 +1,28 @@
 import './style.css';
 import { Link } from 'react-router-dom';
 import { downheader } from '../../../data/header';
-import { UserProductContext } from '../../../Context';
-
+import { useUserContext } from '../../../Context/user/user.context';
 
 export const DownHeader = () => {
+    const { state: userState } = useUserContext();
     return (
-        <UserProductContext.Consumer>
-            {
-                user => (
-                    <div className='downheader' id='myHeader'>
-                        <div className='header-container'>
-                            <div className='logo'>
-                                <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
-                                    <span>Chilindo</span></Link>
-                            </div>
-                            <div className='menu'>
-                                {downheader.map(item => (
-                                    <Link to={user.user === "" ? "/web/login" : item.link} style={{ textDecoration: "none" }}>
-                                        <span>{item.name}</span>
-                                    </Link>
-                                ))}
-                                <Link to={user.user === "" ? "/web/login" : ""} style={{ textDecoration: "none", color: "white" }}>
-                                    <span>{user.user ? user.user : "Đăng nhập"}</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
-        </UserProductContext.Consumer>
-
+        <div className='downheader' id='myHeader'>
+            <div className='header-container'>
+                <div className='logo'>
+                    <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
+                        <span>Chilindo</span></Link>
+                </div>
+                <div className='menu'>
+                    {downheader.map(item => (
+                        <Link to={item.link} style={{ textDecoration: "none" }}>
+                            <span>{item.name}</span>
+                        </Link>
+                    ))}
+                    <Link to={userState.name === "" ? "/web/login" : ""} style={{ textDecoration: "none", color: "white" }}>
+                        <span>{userState.name ? userState.name : "Đăng nhập"}</span>
+                    </Link>
+                </div>
+            </div>
+        </div>
     )
 }

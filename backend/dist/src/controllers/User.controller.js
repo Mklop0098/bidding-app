@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login = exports.register = void 0;
+exports.getInfo = exports.login = exports.register = void 0;
 const User_1 = require("../models/User");
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -72,6 +72,18 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     return res.status(401).json({ code: -1, message: "Username or password is incorrect" });
 });
 exports.login = login;
+const getInfo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const detectedUser = req.user;
+    const user = {
+        id: detectedUser._id,
+        name: detectedUser.name,
+        address: detectedUser.address,
+        phone: detectedUser.phone,
+        username: detectedUser.username
+    };
+    return res.status(200).json({ code: 0, data: user });
+});
+exports.getInfo = getInfo;
 const createToken = (payload, sign) => {
     return jsonwebtoken_1.default.sign(payload, sign, {
         expiresIn: 24 * 60 * 60 // 1 day

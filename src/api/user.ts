@@ -13,7 +13,6 @@ export const login = (username: string, password: string) => {
     return httpClient.post("/login", { username, password })
 }
 
-export const getTest = async () => {
-    const response = await httpClient.get("/test");
-    console.log(response)
+export const getUserInfo = async () => {
+    return await httpClient.get("/user");
 }

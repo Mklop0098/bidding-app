@@ -37,6 +37,7 @@ const AppRoute = (app) => {
     });
     app.post(`/api/${apiVersion}/register`, userController.register);
     app.post(`/api/${apiVersion}/login`, userController.login);
+    app.get('/api/v1/user', passport_1.default.authenticate('jwt', { session: false }), userController.getInfo);
     app.get("/api/v1/test", passport_1.default.authenticate('jwt', { session: false }), (req, res) => {
         if (!req.user)
             return (0, error_handler_1.UnAuthorized)(res);

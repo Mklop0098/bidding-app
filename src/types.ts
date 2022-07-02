@@ -29,6 +29,7 @@ export type Cart = {
 }
 
 export type UserData = {
+    id: string,
     name: string,
     address: string,
     phone: string,

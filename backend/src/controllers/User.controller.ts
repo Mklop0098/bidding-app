@@ -77,6 +77,18 @@ export const login = async (req: Request, res: Response) => {
     return res.status(401).json({ code: -1, message: "Username or password is incorrect" })
 }
 
+export const getInfo = async (req: Request, res: Response) => {
+    const detectedUser = req.user as any;
+    const user = {
+        id: detectedUser._id,
+        name: detectedUser.name,
+        address: detectedUser.address,
+        phone: detectedUser.phone,
+        username: detectedUser.username
+    }
+    return res.status(200).json({ code: 0, data: user });
+}
+
 
 const createToken = (payload: any, sign: string) => {
     return jwt.sign(payload, sign, {

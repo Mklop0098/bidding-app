@@ -13,6 +13,7 @@ export const AppRoute = (app: Express) => {
 
     app.post(`/api/${apiVersion}/register`, userController.register)
     app.post(`/api/${apiVersion}/login`, userController.login)
+    app.get('/api/v1/user', passport.authenticate('jwt', { session: false }), userController.getInfo)
     app.get("/api/v1/test", passport.authenticate('jwt', { session: false }), (req, res) => {
         if (!req.user) return UnAuthorized(res);
         return res.status(200).json({ code: "ok" })

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import './style.css'
 import { CountDownt } from '../../components/CountDown';
 import moment from 'moment';
-import { Products } from '../../components/types';
+import { Products } from '../../types';
 import { UserProductContext } from '../../Context';
 
 

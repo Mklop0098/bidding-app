@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react'
 import { CountDownt } from '../CountDown'
-import { Products as product} from '../types'
+import { Products as product} from '../../types'
 import './style.css'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import moment from 'moment';

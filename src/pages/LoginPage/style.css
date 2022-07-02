@@ -1,0 +1,99 @@
+.login-container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-form {
+    width: 30%;
+}
+
+.form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+
+.form>h1 {
+    margin: 0;
+    margin-bottom: 20px;
+
+}
+
+
+.login {
+    background: url("https://www.freevector.com/uploads/vector/preview/3695/FreeVector-Dark-Background-1.jpg") center center no-repeat;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+    height: 40px;
+    background-color: white;
+    width: 100%;
+}
+
+.search i {
+    width: 10%;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.search input {
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+
+}
+
+.coordination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.coor-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.coor-button button {
+    width: 95%;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.checkPass {}
+
+.checkPass p {
+    margin: 0;
+    font-size: 12px;
+    color: red;
+}
+
+.form>p {
+    margin: 0;
+    color: red;
+    font-size: 12px;
+}

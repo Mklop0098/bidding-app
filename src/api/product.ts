@@ -1,5 +1,5 @@
 
-import { Products, ResponseData } from "../components/types";
+import { Products, ResponseData } from "../types";
 import { listProduct } from "../data/header";
 
 

@@ -1,6 +1,6 @@
 import moment from 'moment'
 import { useState } from 'react'
-import { Products } from '../../components/types'
+import { Products } from '../../types'
 import { UserProducts } from '../../components/UserProduct'
 import { UserProductContext } from '../../Context'
 import './style.css'

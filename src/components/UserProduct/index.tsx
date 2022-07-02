@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import moment from 'moment';
-import { Products } from "../types";
+import { Products } from "../../types";
 import { listProduct } from "../../data/header";
 import './style.css'
 

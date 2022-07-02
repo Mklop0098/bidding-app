@@ -1,7 +1,7 @@
 
 
 import moment from "moment"
-import { Home, Products } from "../components/types"
+import { Home, Products } from "../types"
 import { His } from "../pages/ProductPage"
 
 export const upheader = [
@@ -12,7 +12,7 @@ export const upheader = [
 ]
 
 export const downheader = [
-    {   
+    {
         name: "Sản phẩm của tôi",
         link: "/user/products"
     },
@@ -24,10 +24,6 @@ export const downheader = [
         name: "Giỏ hàng",
         link: "/cart/username"
     },
-    {
-        name: "Chào",
-        link: "/"
-    }
 ]
 
 
@@ -42,7 +38,7 @@ export const homeLink: Home[] = [
         id: "hotitems",
         title: "Sản phẩm bán chạy",
         link: "/home/hotitems"
-    },    
+    },
     {
         id: "hotnews",
         title: "Sản phẩm mới",
@@ -50,7 +46,7 @@ export const homeLink: Home[] = [
     },
 ]
 
-export const listProduct:Products[] = [
+export const listProduct: Products[] = [
     {
         thumbnail: "https://cdn.chilindo.com//XML/Gfx/13-969/13-969-Presell-001_380.jpg",
         name: "Bóng đèn USB",
@@ -99,7 +95,7 @@ export const listProduct:Products[] = [
         id: ""
     },
 
-    
+
 ]
 
 
@@ -118,10 +114,10 @@ export const quest = [
     },
 
 ]
-export const UserProduct:Products[] = [
+export const UserProduct: Products[] = [
 
 ]
-export const YourCart:His[] = [
+export const YourCart: His[] = [
 
 ]
 

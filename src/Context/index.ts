@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Products } from "../components/types";
+import { Products } from "../types";
 import { UserProduct, YourCart } from "../data/header";
 import { His } from "../pages/ProductPage";
 
-export const UserProductContext = React.createContext({  
+export const UserProductContext = React.createContext({
     userProduct: UserProduct,
-    addUserProduct: (data: Products) => {},
+    addUserProduct: (data: Products) => { },
     cart: YourCart,
-    addToCart: (data: His) => {},
+    addToCart: (data: His) => { },
+    user: "",
+    setUser: (user: string) => { }
 })

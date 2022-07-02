@@ -28,3 +28,15 @@ export type Cart = {
     price: number
 }
 
+export type UserData = {
+    name: string,
+    address: string,
+    phone: string,
+    username: string,
+    [key: string]: any
+}
+
+export type UserLogin = {
+    name: string,
+    password: string
+}

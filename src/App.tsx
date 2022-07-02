@@ -10,6 +10,7 @@ import { HomePage } from "./pages/HomePage";
 import { His, ProductPage } from "./pages/ProductPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { useUserContext } from "./Context/user/user.context";
+import { HomeUserPage } from "./pages/HomeUserPage";
 
 
 function App() {
@@ -25,8 +26,11 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />}></Route>
         <Route element={<ProtectedRoute isAllowed={!!userState.id} />}>
           <Route path="/user/products" element={<AddProducts />} />
+          <Route path="/user/homeuser" element={<HomeUserPage />} />
+
         </Route>
         <Route path="/cart/username" element={<CartPage />}></Route>
+
       </Routes>
       <Footer />
     </div>

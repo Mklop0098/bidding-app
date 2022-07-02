@@ -18,7 +18,7 @@ export const DownHeader = () => {
                             <span>{item.name}</span>
                         </Link>
                     ))}
-                    <Link to={userState.name === "" ? "/web/login" : ""} style={{ textDecoration: "none", color: "white" }}>
+                    <Link to={userState.name === "" ? "/web/login" : "/user/homeuser"} style={{ textDecoration: "none", color: "white" }}>
                         <span>{userState.name ? userState.name : "Đăng nhập"}</span>
                     </Link>
                 </div>

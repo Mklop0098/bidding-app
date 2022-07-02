@@ -72,7 +72,7 @@ export const login = async (req: Request, res: Response) => {
             address: detectedUser.address,
             username: detectedUser.username
         }
-        return res.status(200).json({ code: 0, token: createToken(payload, process.env.TOKEN_SIGN || 'bidding') })
+        return res.status(200).json({ code: 0, user: payload, token: createToken(payload, process.env.TOKEN_SIGN || 'bidding') })
     }
     return res.status(401).json({ code: -1, message: "Username or password is incorrect" })
 }

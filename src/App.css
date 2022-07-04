@@ -1,10 +1,9 @@
 .App {
-  background-color: #eaeef0;
+  background: url("https://th.bing.com/th/id/R.7ce7c1ea70b04a32cf6077556555db91?rik=hiLk3h7tQRb1kg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f7%2f2%2f1%2f81767.jpg&ehk=Iw6W9cmIc4KLLLM9cvEDgAKGvmpUV9vwUi7YiAgYHaY%3d&risl=&pid=ImgRaw&r=0") center center no-repeat;
+  background-size: cover;
 }
 
 .container {
   width: 83%;
   margin: auto;
-  background-color: white;
-  padding-bottom: 150px;
 }

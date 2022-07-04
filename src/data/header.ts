@@ -1,7 +1,7 @@
 
 
 import moment from "moment"
-import { Home, Products } from "../types"
+import { Home } from "../types"
 import { His } from "../pages/ProductPage"
 
 export const upheader = [
@@ -13,16 +13,16 @@ export const upheader = [
 
 export const downheader = [
     {
-        name: "Sản phẩm của tôi",
+        name: "Thêm sản phẩm",
         link: "/user/products"
-    },
-    {
-        name: "Đấu giá của tôi",
-        link: "/"
     },
     {
         name: "Giỏ hàng",
         link: "/cart/username"
+    },
+    {
+        name: "Sản phẩm của tôi",
+        link: "/user/storage"
     },
 ]
 
@@ -31,71 +31,19 @@ export const downheader = [
 export const homeLink: Home[] = [
     {
         id: "stopnow",
-        title: "Kết thúc ngay",
+        title: "Đang bán",
         link: "/home/user"
     },
     {
         id: "hotitems",
-        title: "Sản phẩm bán chạy",
+        title: "Đang đấu giá",
         link: "/home/hotitems"
     },
     {
         id: "hotnews",
-        title: "Sản phẩm mới",
+        title: "Đã kết thúc",
         link: "/home/hotnews"
     },
-]
-
-export const listProduct: Products[] = [
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/13-969/13-969-Presell-001_380.jpg",
-        name: "Bóng đèn USB",
-        detail: "Bóng đèn USB",
-        price: "2000 đ",
-        id: "BóngđènUSB",
-        startTime: moment().subtract(4, "minute").subtract(50, "second"),
-
-
-    },
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/21-078/21-078-Presell-1_380.jpg",
-        name: "Automatic Disinfection Sprayer",
-        detail: "Automatic Disinfection Sprayer",
-        price: "2000 đ",
-        id: "AutomaticDisinfectionSprayer",
-        startTime: moment().subtract(4, "minute").subtract(40, "second"),
-
-    },
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/00-059/00-059-0_164.jpg",
-        name: "Móc chìa khóa USB sạc cho micro",
-        detail: "Móc chìa khóa USB sạc cho micro",
-        price: "2000 đ",
-        id: "MócchìakhóaUSBsạcchomicro"
-    },
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/02-878/02-878_0_164.jpg",
-        name: "Bóng đèn USB",
-        detail: "Bóng đèn USB",
-        price: "2000 đ",
-        id: ""
-    },
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/02-878/02-878_0_164.jpg",
-        name: "Bóng đèn USB",
-        detail: "Bóng đèn USB",
-        price: "2000 đ",
-        id: ""
-    },
-    {
-        thumbnail: "https://cdn.chilindo.com//XML/Gfx/02-878/02-878_0_164.jpg",
-        name: "Bóng đèn USB",
-        detail: "Bóng đèn USB",
-        price: "2000 đ",
-        id: ""
-    },
-
-
 ]
 
 
@@ -112,12 +60,6 @@ export const quest = [
         quest: "Thay đổi đơn hàng?",
         answer: "(028)-36222111"
     },
-
-]
-export const UserProduct: Products[] = [
-
-]
-export const YourCart: His[] = [
 
 ]
 

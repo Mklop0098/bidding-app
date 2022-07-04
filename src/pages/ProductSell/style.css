@@ -1,0 +1,44 @@
+.productsell {
+    max-height: 100vh;
+}
+
+.sell-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 151px auto;
+    padding: 60px 0;
+
+}
+
+.product-thumbnail {
+    width: 40%;
+    margin: auto;
+}
+
+.product-thumbnail img {
+    width: 100%;
+}
+
+.sell-option {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sell-option input {
+    width: 70%;
+    height: 30px;
+    padding: 0 10px;
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.sell-option button {
+    width: 30%;
+    height: 30px;
+}

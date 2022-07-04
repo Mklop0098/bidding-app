@@ -1,4 +1,6 @@
+
 import { Moment } from "moment"
+import { Product } from "./components/Product"
 
 export type ResponseData<T> = {
     code: number,
@@ -6,14 +8,23 @@ export type ResponseData<T> = {
     data?: T
 }
 
-export type Products = {
+export type Product = {
     thumbnail: string,
     name: string,
     detail: string,
-    price: string,
-    id: string,
+    price: number,
+    id: number,
     startTime?: Moment,
-    isInBidSession?: boolean
+    isInBidSession?: boolean,
+    belongTo: string,
+    state: string,
+    quantity: number,
+    alpha: number,
+    biddingTime: number
+}
+
+export type Products = {
+    products: Product[]
 }
 
 export type Home = {

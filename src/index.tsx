@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LoginPage } from './pages/LoginPage';
 import { SignInPage } from './pages/SignInPage';
 import { UserProvider } from './Context/user/user.context';
+import { ProductProvider } from './Context/products/product.context';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,15 +16,17 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
-      <UserProvider>
-        <div className="App">
-          <Routes>
-            <Route path="/web/login" element={<LoginPage />}></Route>
-            <Route path="/web/signin" element={<SignInPage />}></Route>
-            <Route path="*" element={<App />}></Route>
-          </Routes>
-        </div>
-      </UserProvider>
+      <ProductProvider>
+        <UserProvider>
+          <div className="App">
+            <Routes>
+              <Route path="/web/login" element={<LoginPage />}></Route>
+              <Route path="/web/signin" element={<SignInPage />}></Route>
+              <Route path="*" element={<App />}></Route>
+            </Routes>
+          </div>
+        </UserProvider>
+      </ProductProvider>
     </Router>
   </React.StrictMode>
 );

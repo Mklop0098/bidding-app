@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { getProductById } from '../../api/product';
+// import { getProductById } from '../../api/product';
 import { useParams } from "react-router-dom";
 import './style.css'
 import { CountDownt } from '../../components/CountDown';
 import moment from 'moment';
-import { Products } from '../../types';
 
 export type His = {
     gia: number,
@@ -21,15 +20,15 @@ export const ProductPage: React.FC = () => {
     const [ctrl, setCtrl] = useState("Hiển thị thêm")
     const match = useParams<{ id: string }>();
 
-    const [product, setProduct] = useState<Products>();
+    // const [product, setProduct] = useState<Products>();
 
-    useEffect(() => {
-        const response = getProductById(match.id);
-        if (response.code === 404) {
-            throw new Error(response.message);
-        }
-        setProduct(response.data);
-    }, [match.id]);
+    // useEffect(() => {
+    //     const response = getProductById(match.id);
+    //     if (response.code === 404) {
+    //         throw new Error(response.message);
+    //     }
+    //     setProduct(response.data);
+    // }, [match.id]);
 
 
     const handleDown = () => {
@@ -48,22 +47,21 @@ export const ProductPage: React.FC = () => {
             setCurr(value)
         }
 
-        let name
-        if (product?.name === undefined) {
-            name = ""
-        }
-        else {
-            name = product.name
-        }
+        // let name
+        // if (product?.name === undefined) {
+        //     name = ""
+        // }
+        // else {
+        //     name = product.name
+        // }
 
         let tmp = {
             gia: value,
             soluong: 1,
             ngaygio: time,
-            ten: name
         }
 
-        setHis([tmp, ...history])
+        // setHis([tmp, ...history])
     }
 
     const handleCtrl = () => {
@@ -87,10 +85,10 @@ export const ProductPage: React.FC = () => {
                 <div className='productpage-container'>
                     <div className='carousel-menu'>
                         <div className='product_carousel'>
-                            <img src={product?.thumbnail} alt="" />
+                            {/* <img src={product?.thumbnail} alt="" /> */}
                         </div>
                         <div className='product_menu'>
-                            <h1>{product?.name}</h1>
+                            {/* <h1>{product?.name}</h1> */}
                             <div className='timedown'>
                                 {/* {product && <CountDownt endTime={product.startTime?.clone().add(5 * 60, "seconds") ?? moment()} onCounterEnd={() => handleTimesUp(data.addToCart)} />} */}
                             </div>

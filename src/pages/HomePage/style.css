@@ -15,18 +15,19 @@
     padding: 10px 0;
 }
 
-.homepage-menu  h4 {
+.homepage-menu h4 {
     margin: 0;
     font-weight: 400;
     padding: 0 10px;
     font-size: 14px;
+    color: white;
 }
 
 .active {
-    color: #1ab7ea;
+    color: #1ab7ea !important;
 }
 
-.homepage-menu  h4:hover {
+.homepage-menu h4:hover {
     color: #1ab7ea;
     cursor: pointer;
 }
@@ -40,3 +41,6 @@
     flex-wrap: wrap;
 }
 
+.homepage {
+    height: calc(100vh - 57px);
+}

@@ -1,6 +1,6 @@
 import './style.css'
 import { Link } from 'react-router-dom'
-import { question, UserProduct } from '../../data/header'
+import { question } from '../../data/header'
 
 export const CartPage = () => {
     return <div className='cardPage'>

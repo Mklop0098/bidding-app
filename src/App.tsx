@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { Products } from "./types";
 import { AddProducts } from "./pages/AddProducts";
 import { CartPage } from "./pages/CartPage";
 import { HomePage } from "./pages/HomePage";
@@ -11,6 +10,9 @@ import { His, ProductPage } from "./pages/ProductPage";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { useUserContext } from "./Context/user/user.context";
 import { HomeUserPage } from "./pages/HomeUserPage";
+import { ProductSell } from "./pages/ProductSell";
+import { StoragePage } from "./pages/StoragePage";
+import { ProductBidding } from "./pages/ProductBidding";
 
 
 function App() {
@@ -27,12 +29,14 @@ function App() {
         <Route element={<ProtectedRoute isAllowed={!!userState.id} />}>
           <Route path="/user/products" element={<AddProducts />} />
           <Route path="/user/homeuser" element={<HomeUserPage />} />
+          <Route path="/user/storage" element={<StoragePage />} />
+          <Route path="/user/sell/:id" element={<ProductSell />} />
+          <Route path="/user/bid/:id" element={<ProductBidding />} />
+
 
         </Route>
-        <Route path="/cart/username" element={<CartPage />}></Route>
 
       </Routes>
-      <Footer />
     </div>
   );
 }

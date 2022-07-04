@@ -1,0 +1,7 @@
+export const ProductConst = {
+    "SET_PRODUCT": "SET_PRODUCT",
+    "DELETE_PRODUCT": "DELETE_PRODUCT",
+    "START_BIDDING": "START_BIDDING",
+    "START_SELLING": "START_SELLING"
+
+} as const

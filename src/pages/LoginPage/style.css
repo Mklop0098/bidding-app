@@ -30,7 +30,7 @@
 
 
 .login {
-    background: url("https://www.freevector.com/uploads/vector/preview/3695/FreeVector-Dark-Background-1.jpg") center center no-repeat;
+    background: url("https://images.theconversation.com/files/295058/original/file-20191001-173407-17sejqu.jpg?ixlib=rb-1.1.0&rect=0%2C233%2C5200%2C2600&q=45&auto=format&w=1356&h=668&fit=crop") center center no-repeat;
     height: 100vh;
     background-size: cover;
     display: flex;
@@ -42,23 +42,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     margin: 10px 0;
     height: 40px;
     background-color: white;
-    width: 100%;
 }
 
 .search i {
     width: 10%;
     text-align: center;
-    padding-right: 10px;
 }
 
 .search input {
-    width: 90%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+    margin: auto;
     border: none;
     outline: none;
     font-size: 16px;

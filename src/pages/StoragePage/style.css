@@ -1,0 +1,14 @@
+.storage {
+    min-height: calc(100vh - 56px);
+}
+
+.storage-container {
+
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+
+}

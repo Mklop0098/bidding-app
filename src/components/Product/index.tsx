@@ -18,7 +18,7 @@ export const Product: React.FC<Data> = (props) => {
 
     return (
         <Link to={`/product/${data.id}`} style={{ textDecoration: "none", color: "black" }}>
-            <div className='product'>
+            {/* <div className='product'>
                 <div className='product-container'>
                     <div className='product-img' style={{
                         background: `url("${data.thumbnail}") center center no-repeat`,
@@ -34,7 +34,28 @@ export const Product: React.FC<Data> = (props) => {
                         <p style={{ fontWeight: "500" }}>{data.price} đ</p>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <div className='storage-product'>
+                <div className='product_thumnail' style={{
+                    background: `url("${data.thumbnail}") center center no-repeat`,
+                    backgroundSize: "cover"
+                }}>
+
+                </div>
+                <div className='product-content'>
+                    <h4>{data.name}</h4>
+                    <p style={{ padding: "10px 0" }}>{data.detail}</p>
+                    <p>Số lượng còn lại: {data.quantity}</p>
+                </div>
+                <div className='product-time'>
+                    {
+                        data.state === "selling" ? <p>For Sale</p> :
+                            <CountDownt endTime={data.startTime?.clone().add(data.biddingTime, "minutes") ?? moment()} />
+                    }
+                    <p style={{ fontWeight: "500" }}>{data.price} đ</p>
+
+                </div>
+            </div >
         </Link>
     )
 }

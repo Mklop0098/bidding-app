@@ -17,10 +17,6 @@ export const downheader = [
         link: "/user/products"
     },
     {
-        name: "Giỏ hàng",
-        link: "/cart/username"
-    },
-    {
         name: "Sản phẩm của tôi",
         link: "/user/storage"
     },

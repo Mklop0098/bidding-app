@@ -24,7 +24,7 @@ export const HomePage = () => {
 
     return (
         <div className='homepage'>
-            <div className='container'>
+            <div className='homepage-container'>
                 <div className='homepage-container'>
                     <div className='homepage-menu'>
 
@@ -46,6 +46,7 @@ export const HomePage = () => {
                             ))
                     }
                 </div>
+
             </div>
         </div>
     )

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { deleteUser } from "../../Context/user/user.action";
 import { useUserContext } from "../../Context/user/user.context"
 import './style.css'
 
@@ -9,9 +11,14 @@ const currstate = {
 
 export const HomeUserPage = () => {
 
-    const { state } = useUserContext();
+    const { state, dispatch } = useUserContext();
 
     const [currentState, setCurrentState] = useState(currstate.myProfile)
+
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+        dispatch(deleteUser())
+    }
 
     return (
         <div className="homeuser">
@@ -45,10 +52,17 @@ export const HomeUserPage = () => {
                                     <i className="fa-solid fa-user"></i>
                                     <h2>Hồ sơ của tôi</h2>
                                 </div>
+
                                 <div className={`myprofile ${currentState === currstate.myWallet && "choosen"}`} onClick={() => setCurrentState(currstate.myWallet)}>
                                     <i className="fa-solid fa-wallet"></i>
                                     <h2>Ví của tôi</h2>
                                 </div>
+                                <Link to="/" style={{ textDecoration: "none", width: "100%", marginLeft: "25px" }}>
+                                    <div className={`myprofile ${currentState === currstate.myWallet && "choosen"}`} onClick={handleLogout}>
+                                        <i className="fa-solid fa-right-from-bracket"></i>
+                                        <h2>Đăng xuất</h2>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         {
@@ -117,3 +131,4 @@ export const HomeUserPage = () => {
         </div>
     )
 }
+

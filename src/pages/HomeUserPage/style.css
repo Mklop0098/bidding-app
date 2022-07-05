@@ -1,6 +1,7 @@
 .userProfile-container {
     background-color: white;
-    height: calc(100vh - 57px);
+    width: 85%;
+    margin: auto;
 }
 
 p,
@@ -15,8 +16,7 @@ h2 {
 }
 
 .avatar-menu {
-    width: 25%;
-    height: calc(100vh - 57px);
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,6 +112,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid rgb(228, 223, 223);
 }
 
 .userProfile-header i {
@@ -135,7 +136,7 @@ h2 {
 
 .content-item input {
     width: 90%;
-    height: 50px;
+    height: 40px;
     padding-left: 10px;
     border-radius: 10px;
     border: none;

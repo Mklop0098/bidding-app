@@ -6,11 +6,10 @@ import { useUserContext } from '../../Context/user/user.context'
 import { Product as product } from '../../types'
 import './style.css'
 
-const MAX_STEP = 4
-
 export const AddProducts = () => {
-    const [image, setImage] = useState("")
     const [productInfo, setProductInfo] = useState<product>({} as product)
+    const [error, setError] = useState({ productName: "", productQuantity: "", productImage: "", noError: "" })
+
 
     const { productState, productDispatch } = useProductContext();
     const { state } = useUserContext();
@@ -22,6 +21,8 @@ export const AddProducts = () => {
             [field]: value,
             "id": productState.products.length + 1
         })
+
+        setError({ productName: "", productQuantity: "", productImage: "", noError: "" })
 
 
     }
@@ -36,146 +37,75 @@ export const AddProducts = () => {
 
     const handleClick = () => {
 
+        const err = {
+            productName: "",
+            productQuantity: "",
+            productImage: "",
+            noError: ""
+        }
+        if (!productInfo.name) {
+            err.productName = "*Nhập tên sản phẩm"
+        }
+        if (!productInfo.quantity) {
+            err.productQuantity = "*Nhập số lượng"
+        }
+        if (productInfo.quantity < 1) {
+            err.productQuantity = "*Số lượng không hợp lệ"
+        }
+        if (!productInfo.thumbnail) {
+            err.productImage = "*Chọn hình ảnh"
+        }
+        setError(err)
+        if (!err.productName && !err.productImage && !err.productQuantity)
+            setError({ ...error, noError: "*Thêm thành công" })
         productDispatch(SetProduct(productInfo))
-    }
-
-    const [currentStep, setCurrentStep] = useState(1)
-    console.log(currentStep)
-    const handleNext = () => {
-        setCurrentStep(currentStep + 1)
-    }
-
-
-    const handlePrevious = () => {
-        setCurrentStep(currentStep - 1)
 
     }
+
+    console.log(error)
 
     return (
         <div className='addproduct'>
             <div className='addprouct-container'>
                 <div className='container'>
-                    <div className="stepper-container">
-                        <div id="stepProgressBar">
-                            <div className="step">
-                                <div className={`bullet ${currentStep - 1 >= 1 && "completed"}`}></div>
-                                <p className='step-text' onClick={() => setCurrentStep(1)}>Chọn hình ảnh</p>
+                    <div className='addForm'>
+                        <div className='addform-header'>
+                            <h1>Thêm sản phẩm</h1>
+                        </div>
+                        <div className='addform-content'>
+                            <div className='search-input' >
+                                <p>PRODUCT NAME</p>
+                                <input type="text" onChange={(value) => handleChange('name', value.target.value)} />
+                                <p className='input_error'>{error.productName}</p>
                             </div>
-                            <div className="step">
-                                <div className={`bullet ${currentStep - 1 >= 2 && "completed"}`}></div>
-                                <p className='step-text' onClick={() => setCurrentStep(2)}>Thông tin sản phẩm</p>
+
+                            <div className='search-input' >
+                                <p>QUANTITY</p>
+                                <input type="number" onChange={(value) => handleChange('quantity', value.target.value)} style={{ width: "30%" }} />
+                                <p className='input_error'>{error.productQuantity}</p>
 
                             </div>
-                            <div className="step">
-                                <div className={`bullet ${currentStep - 1 >= 3 && "completed"}`}></div>
-                                <p className='step-text' onClick={() => setCurrentStep(3)}>Tính sở hữu</p>
+
+                            <div className='search-input' >
+                                <p>PRODUCT NOTES</p>
+                                <textarea onChange={(value) => handleChange('detail', value.target.value)}></textarea>
 
                             </div>
-                            <div className="step">
-                                <div className="bullet"></div>
-                                <p className='step-text' onClick={() => setCurrentStep(4)}>Xác thực</p>
+
+                            <div className='search-input' >
+                                <p>ADD AN IMAGE</p>
+                                <input type="file" onChange={e => onImageChange(e)} style={{ padding: "0" }} />
+                                <p className='input_error'>{error.productImage}</p>
+                                <img src={productInfo.thumbnail} alt="" />
 
                             </div>
                         </div>
-                        <div id="main">
-                            {
-                                currentStep === 1 ?
-                                    <div className='stepAddImage padding'>
-                                        <h1>Thêm hình ảnh</h1>
-
-                                        <div className='imageAdd'>
-                                            <img src={productInfo.thumbnail} alt="" />
-                                        </div>
-                                        <input type="file" onChange={e => onImageChange(e)} />
-                                    </div> :
-                                    currentStep === 2 ?
-                                        <div className='stepAddInformation padding'>
-                                            <h1 style={{ color: "white" }}>Thông tin sản phẩm</h1>
-                                            <div className='stepAddInfo-container'>
-                                                <div className='imageAdd'>
-                                                    <img src={productInfo.thumbnail} alt="" />
-                                                </div>
-                                                <div className='informationForm'>
-                                                    <p>Tên sản phẩm</p>
-                                                    <div className='search-input' >
-
-                                                        <input type="text" style={{ color: 'black', backgroundColor: `white` }} placeholder="Tên sản phẩm"
-                                                            onChange={(value) => handleChange('name', value.target.value)} />
-                                                    </div>
-                                                    <p>Số lượng</p>
-                                                    <div className='search-input' >
-
-                                                        <input type="number" style={{ color: 'black', backgroundColor: `white` }} placeholder="Số lượng"
-                                                            onChange={(value) => handleChange('quantity', value.target.value)} />
-                                                    </div>
-                                                    <p>Mô tả chi tiết</p>
-                                                    <div className='search-input' >
-
-                                                        <input type="text" style={{ color: 'black', backgroundColor: `white` }} placeholder="Mô tả"
-                                                            onChange={(value) => handleChange('detail', value.target.value)} />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> :
-                                        currentStep === 3 ? <div className="owner"></div> :
-                                            <div className='stepAddInformation padding'>
-                                                <h1 style={{ color: "white" }}>Thông tin sản phẩm</h1>
-                                                <div className='stepAddInfo-container'>
-                                                    <div className='imageAdd'>
-                                                        <img src={productInfo.thumbnail} alt="" />
-                                                    </div>
-                                                    <div className='informationForm'>
-                                                        <p>Tên sản phẩm</p>
-                                                        <p className='styleP'>{productInfo.name}</p>
-                                                        <p>Số lượng</p>
-                                                        <p className='styleP'>{productInfo.quantity}</p>
-                                                        <p>Mô tả chi tiết</p>
-                                                        <p className='detail'>{productInfo.detail}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                            }
-                            <div className='controlBtn'>
-                                <button id="previousBtn" onClick={handlePrevious} disabled={currentStep <= 1}>Bước trước đó</button>
-                                {
-                                    currentStep === MAX_STEP ? <button id="finishBtn" onClick={handleClick}>Xác nhận</button> :
-                                        <button id="nextBtn" onClick={handleNext} disabled={currentStep === MAX_STEP}>Bước tiếp theo</button>
-                                }
-
-
-                            </div>
-
+                        <div className='add-btn'>
+                            <button onClick={handleClick}>Xác nhận</button>
+                            <p>{error.noError}</p>
                         </div>
+
                     </div>
-
-
-                    {/* <div className='addproduct-add'>
-                    <div className='add-content'>
-                        <div className='search'>
-                            <i className="fa-solid fa-user"></i>
-                            <input type="text" style={{ color: 'black', backgroundColor: `white` }} placeholder="Tên sản phẩm"
-                                onChange={(value) => handleChange('name', value.target.value)} />
-                        </div>
-                        <div className='search'>
-                            <i className="fa-solid fa-info"></i>
-                            <input type="text" style={{ color: 'black', backgroundColor: `white` }} placeholder="Mô tả"
-                                onChange={(value) => handleChange('detail', value.target.value)} />
-                        </div>
-                        <div className='search'>
-                            <i className="fa-solid fa-users"></i>
-                            <input type="number" style={{ color: 'black', backgroundColor: `white` }} placeholder="Số lượng"
-                                onChange={(value) => handleChange('quantity', value.target.value)} />
-                        </div>
-                        <p>thêm hình ảnh</p>
-                        <input type="file" onChange={e => onImageChange(e)} />
-                        <button onClick={handleClick}>Post</button>
-                    </div>
-                    <div className={`picture ${productInfo.thumbnail && "box-shadow"}`}>
-                        {
-                            <img src={productInfo.thumbnail} alt="" />
-                        }
-                    </div>
-                </div> */}
                 </div>
             </div>
         </div >

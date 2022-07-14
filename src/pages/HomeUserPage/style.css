@@ -1,7 +1,8 @@
 .userProfile-container {
     background-color: white;
     width: 85%;
-    margin: auto;
+    margin: 50px auto;
+    border-radius: 10px;
 }
 
 p,
@@ -22,6 +23,10 @@ h2 {
     align-items: center;
     background: #fff url("https://www.chilindo.com/assets/svgIcon/profileBG.svg") 0 0 no-repeat;
     border-right: 2px solid rgb(240, 237, 237);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+
 }
 
 .avatar {
@@ -130,7 +135,7 @@ h2 {
     flex-wrap: wrap;
 }
 
-.content-item {
+/* .content-item {
     width: 50%;
 }
 
@@ -148,7 +153,7 @@ h2 {
     padding: 30px 0 10px 0;
     font-weight: 500;
 
-}
+} */
 
 .choosen {
     background-color: #1ab8ea;

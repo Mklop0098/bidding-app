@@ -2,7 +2,6 @@
 
 import moment from "moment"
 import { Home } from "../types"
-import { His } from "../pages/ProductPage"
 
 export const upheader = [
     "CHÍNH SÁCH ĐỔI TRẢ 30 NGÀY",

@@ -17,8 +17,8 @@ export const StartBidding = (id: number, price: number, alpha: number, time: num
     return typedAction(ProductConst.START_BIDDING, { id, price, alpha, time })
 }
 
-export const StartSelling = (id: number, price: number) => {
-    return typedAction(ProductConst.START_SELLING, { id, price })
+export const StartSelling = (id: number, price: number, moneyType: string) => {
+    return typedAction(ProductConst.START_SELLING, { id, price, moneyType })
 }
 
 export type ProductAction = ReturnType<

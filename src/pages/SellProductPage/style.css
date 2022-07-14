@@ -1,0 +1,53 @@
+.sellProductPage {
+    width: 100%;
+}
+
+.sellProductPage-container {
+    background-color: white;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+.sellProductPage-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.content__thumbnails {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__thumbnails img {
+    width: 60%;
+    height: auto;
+}
+
+.product-name {
+    color: rgb(21 86 167);
+}
+
+.content__sell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.product__input {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.content-btn {
+    width: 47%;
+    height: 40px;
+    margin: 20px 0;
+    cursor: pointer;
+}

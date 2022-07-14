@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
+import { ShowInformation } from "../../components/ShowInformation";
 import { deleteUser } from "../../Context/user/user.action";
 import { useUserContext } from "../../Context/user/user.context"
 import './style.css'
@@ -58,7 +59,7 @@ export const HomeUserPage = () => {
                                     <h2>Ví của tôi</h2>
                                 </div>
                                 <Link to="/" style={{ textDecoration: "none", width: "100%", marginLeft: "25px" }}>
-                                    <div className={`myprofile ${currentState === currstate.myWallet && "choosen"}`} onClick={handleLogout}>
+                                    <div className="myprofile" onClick={handleLogout}>
                                         <i className="fa-solid fa-right-from-bracket"></i>
                                         <h2>Đăng xuất</h2>
                                     </div>
@@ -73,46 +74,16 @@ export const HomeUserPage = () => {
                                         <i className="fa-solid fa-pen"></i>
                                     </div>
                                     <div className="userProfile-content">
-                                        <div className="content-item">
-                                            <p>Họ</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Têm</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Tên tài khoản</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Email</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Di động</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Live ID</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Ngày sinh</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Giới tính</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Quốc gia</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
-                                        <div className="content-item">
-                                            <p>Ngôn ngữ</p>
-                                            <input type="text" value={state.name} disabled={true} />
-                                        </div>
+                                        <ShowInformation content={state.name} isDisable={true} title={"Họ"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Tên"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Tên tài khoản"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Email"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Di động"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Live ID"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Ngày sinh"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Giới tính"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Quốc gia"} />
+                                        <ShowInformation content={state.name} isDisable={true} title={"Ngôn ngữ"} />
                                     </div>
                                 </div> :
                                 <div className="userProfile">

@@ -25,7 +25,7 @@ export const ProductReview: React.FC<Data> = (props) => {
                 background: `url("${data.thumbnail}") center center no-repeat`,
                 backgroundSize: "cover"
             }}>
-
+                <i className="fa-solid fa-rectangle-xmark" onClick={handleDelete} style={{ cursor: "pointer", color: "red", paddingRight: "5px", fontSize: "18px" }}></i>
             </div>
             <div className='product-content'>
                 <h4>{data.name}</h4>
@@ -35,9 +35,7 @@ export const ProductReview: React.FC<Data> = (props) => {
                 <Link to={`/user/bid/${data.name}`} style={{ width: "30%" }}><button>Đấu giá</button></Link>
                 <Link to={`/user/sell/${data.name}`} style={{ width: "30%" }}><button>Bán</button></Link>
 
-                <Link to="" style={{ width: "30%" }}>
-                    <button onClick={handleDelete}>Xóa</button>
-                </Link>
+
 
 
             </div>

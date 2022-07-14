@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ProductReview } from '../../components/ProductReview'
+import { ShowInformation } from '../../components/ShowInformation'
 import { SetProduct } from '../../Context/products/product.action'
 import { useProductContext } from '../../Context/products/product.context'
 import { useUserContext } from '../../Context/user/user.context'
@@ -56,9 +57,10 @@ export const AddProducts = () => {
             err.productImage = "*Chọn hình ảnh"
         }
         setError(err)
-        if (!err.productName && !err.productImage && !err.productQuantity)
+        if (!err.productName && !err.productImage && !err.productQuantity) {
             setError({ ...error, noError: "*Thêm thành công" })
-        productDispatch(SetProduct(productInfo))
+            productDispatch(SetProduct(productInfo))
+        }
 
     }
 
@@ -73,17 +75,15 @@ export const AddProducts = () => {
                             <h1>Thêm sản phẩm</h1>
                         </div>
                         <div className='addform-content'>
-                            <div className='search-input' >
+                            <div className='content-item' >
                                 <p>PRODUCT NAME</p>
                                 <input type="text" onChange={(value) => handleChange('name', value.target.value)} />
                                 <p className='input_error'>{error.productName}</p>
                             </div>
-
-                            <div className='search-input' >
+                            <div className='content-item' >
                                 <p>QUANTITY</p>
                                 <input type="number" onChange={(value) => handleChange('quantity', value.target.value)} style={{ width: "30%" }} />
                                 <p className='input_error'>{error.productQuantity}</p>
-
                             </div>
 
                             <div className='search-input' >

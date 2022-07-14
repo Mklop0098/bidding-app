@@ -36,6 +36,7 @@ export const productReducer = (state: Products, action: ProductAction): Products
             if (product) {
                 product.price = action.payload.price
                 product.state = "selling"
+                product.moneyType = action.payload.moneyType
                 return { products: [...state.products] }
             }
             else return state

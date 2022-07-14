@@ -17,24 +17,7 @@ export const Product: React.FC<Data> = (props) => {
     const { data } = props;
 
     return (
-        <Link to={`/product/${data.id}`} style={{ textDecoration: "none", color: "black" }}>
-            {/* <div className='product'>
-                <div className='product-container'>
-                    <div className='product-img' style={{
-                        background: `url("${data.thumbnail}") center center no-repeat`,
-                        backgroundSize: "cover"
-                    }}></div>
-                    <h4>{data.name}</h4>
-                    <p>{data.detail}</p>
-                    <div className='product-time'>
-                        {
-                            data.state === "selling" ? <p>For Sale</p> :
-                                <CountDownt endTime={data.startTime?.clone().add(data.biddingTime, "minutes") ?? moment()} />
-                        }
-                        <p style={{ fontWeight: "500" }}>{data.price} đ</p>
-                    </div>
-                </div>
-            </div> */}
+        <Link to={`/product/${data.name}`} style={{ textDecoration: "none", color: "black" }}>
             <div className='storage-product'>
                 <div className='product_thumnail' style={{
                     background: `url("${data.thumbnail}") center center no-repeat`,
@@ -52,7 +35,7 @@ export const Product: React.FC<Data> = (props) => {
                         data.state === "selling" ? <p>For Sale</p> :
                             <CountDownt endTime={data.startTime?.clone().add(data.biddingTime, "minutes") ?? moment()} />
                     }
-                    <p style={{ fontWeight: "500" }}>{data.price} đ</p>
+                    <p style={{ fontWeight: "500" }}>{data.price} {data.moneyType}</p>
 
                 </div>
             </div >

@@ -20,7 +20,8 @@ export type Product = {
     state: string,
     quantity: number,
     alpha: number,
-    biddingTime: number
+    biddingTime: number,
+    moneyType: string
 }
 
 export type Products = {
